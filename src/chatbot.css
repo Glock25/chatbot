@@ -187,11 +187,12 @@ body{
   -webkit-appearance: none;
 }
 
-.input > form > input:focus {
+.chatbot .input > form > input:focus {
   outline: none;
 }
 
-.input > form > button {
+
+.chatbot  .input > form > button {
   background-color: transparent;
   border: 0;
   border-bottom-right-radius: 10px;
@@ -205,3 +206,5 @@ body{
   right: 0;
   top: 0;
 }
+.chatbot .buttonbox {position: absolute; top: 14px; right: 5px; }
+.chatbot .buttonbox button{border: none; cursor: pointer; background: transparent; margin: 0 3px;}

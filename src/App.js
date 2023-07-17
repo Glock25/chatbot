@@ -4,10 +4,7 @@ import MainChatComponent from "./MainChatComponent";
 
 
 function App() {
-
-
   return (
-
     <>
       
     <MainChatComponent />

@@ -62,11 +62,9 @@ const ChatComponent = (props) => {
 
 
     <div  className={activeClass == props.chatshow ? "chatbot active" : "chatbot" }>
-  
-      
-      <Header   func={pull_data}  />
-      <Messages messages={messages} />
-      <Input onSend={send} />
+        <Header   func={pull_data}  />
+        <Messages messages={messages} />
+        <Input onSend={send} />
     </div>
   )
 }
