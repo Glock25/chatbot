@@ -2,12 +2,19 @@ import React, {useState} from 'react'
 
 import ChatComponent from "./ChatComponent";
 
-import chatBotIcon from "./images/chatboticon.png"
+import chatBotIcon from "./images/chatboticon.gif"
 import "./chatbot.css";
 
 const MainChatComponent = () => {
 
      const [chatshow, setChatshow] = useState(false);
+
+     const functionforShow = (data) => {
+      
+      console.log("this is it",data)
+
+
+    }
 
   return (
     <div >
@@ -19,12 +26,9 @@ const MainChatComponent = () => {
 
             
 
-            {
-                chatshow ? 
-                <ChatComponent />
-                :
-                ''  
-            }
+                <ChatComponent chatshow={chatshow}  mainparent={functionforShow}/>
+               
+             
             
     
     </div>

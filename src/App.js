@@ -9,12 +9,6 @@ function App() {
   return (
 
     <>
-
-
-
-     
-
-
       
     <MainChatComponent />
      

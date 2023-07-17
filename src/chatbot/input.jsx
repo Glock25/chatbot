@@ -9,7 +9,10 @@ export default function Input({ onSend }) {
 
   const handleSend = e => {
     e.preventDefault();
-    onSend(text);
+    if(text.length > 1){
+      onSend(text);  
+    }
+    
     setText("");
   };
 

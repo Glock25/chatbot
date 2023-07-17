@@ -1,30 +1,58 @@
-import React from "react";
+import React, { useState } from "react";
 
-export default function Header() {
+import botIcon from "../images/boticon.png"
+
+export default function Header(props) {
+
+  const [closeIcon, setCloseIcon] = useState(false);
+
+  const [alertpopup, setAlertpopup] = useState(false)
+
+  props.func(closeIcon);
+
+  
+
   return <div className=" chatbotheader d-flex">
-            <div className="leftarrow">
+            {/* <div className="leftarrow">
               <svg xmlns="http://www.w3.org/2000/svg" width="9.854" height="17.237" viewBox="0 0 9.854 17.237">
                 <path  d="M14.221,14.81l6.522-6.517A1.232,1.232,0,0,0,19,6.553l-7.389,7.384a1.229,1.229,0,0,0-.036,1.7l7.42,7.435a1.232,1.232,0,1,0,1.745-1.74Z" transform="translate(-11.251 -6.194)" fill="#fff"/>
               </svg>
 
-            </div>
+            </div> */}
 
             <div className="icon_name_head d-flex">
                 <div className="usericon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 31 31">
-                  <g id="Group_1" data-name="Group 1" transform="translate(-230.336 -85.336)">
-                    <circle id="Ellipse_1" data-name="Ellipse 1" cx="15.5" cy="15.5" r="15.5" transform="translate(230.335 85.336)" fill="#5a6091"/>
-                    <path id="Icon_awesome-user" data-name="Icon awesome-user" d="M7.152,8.174A4.087,4.087,0,1,0,3.065,4.087,4.087,4.087,0,0,0,7.152,8.174ZM10.013,9.2H9.48a5.558,5.558,0,0,1-4.655,0H4.291A4.292,4.292,0,0,0,0,13.487v1.328a1.533,1.533,0,0,0,1.533,1.533H12.772A1.533,1.533,0,0,0,14.3,14.816V13.487A4.292,4.292,0,0,0,10.013,9.2Z" transform="translate(239 92.481)" fill="#fff"/>
-                  </g>
-                </svg>
-
+                  
+                  <img src={botIcon} alt="" />
 
                 </div>
                 <div className="rtname">
-                    <strong className="d-block">Noshad</strong>
+                    <strong className="d-block">AI Bot</strong>
                     <small>Online</small>
                 </div>
             </div>
+
+            <div className="closebutton marginauto" 
+            onClick={()=>{setAlertpopup(!alertpopup)}}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="13.426" height="13.423" viewBox="0 0 13.426 13.423">
+                <path d="M19.589,18l4.8-4.8A1.124,1.124,0,0,0,22.8,11.616l-4.8,4.8-4.8-4.8A1.124,1.124,0,1,0,11.616,13.2l4.8,4.8-4.8,4.8A1.124,1.124,0,0,0,13.2,24.384l4.8-4.8,4.8,4.8A1.124,1.124,0,1,0,24.384,22.8Z" transform="translate(-11.285 -11.289)" fill="#fff"/>
+              </svg>
+
+            </div>
+
+          
+              <div  className={alertpopup ? "alertcustombox show"  : "alertcustombox " }>
+                <p style={{marginTop:0, fontSize:"12px", fontWeight : 500}}>
+                  Are you sure you want to clear this conversation?
+                </p>
+
+
+                <button className="clearbutton" onClick={() => {setCloseIcon(!closeIcon) } }>Clear</button>
+                <button className="notsurebutton"     onClick={()=>{setAlertpopup(!alertpopup)}} >Not Sure</button>
+            </div>
+           
+          
 
 
         </div>;

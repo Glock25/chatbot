@@ -6,6 +6,8 @@ body{
   font-family: 'Montserrat', sans-serif;
 }
 
+.marginauto{margin-left: auto; margin-right: 0;}
+.chatbot .closebutton{cursor: pointer;}
 .chatIcon{
   position: fixed;
   bottom: 10px;
@@ -15,7 +17,9 @@ body{
  
     cursor: pointer;
     justify-content: center;
+  
 }
+
 .chatIcon img{    width: 100%;}
 .chatbot {
   position: fixed;
@@ -30,10 +34,43 @@ body{
   flex-flow: column;
   width: 394px;
   overflow: hidden;
+  display: none;
+}
+.chatbot.active{
+  display: block;
 }
 .chatbot .message-container{margin-bottom: 10px;}
 .chatbot .pxpy-3 {padding: 0px; margin:0 5px 5px 5px;}
 .chatbot .innerboxchat{padding:0 10px;}
+
+.alertcustombox.show{display: block;}
+.alertcustombox {position: absolute;
+  display: none;
+  right: 10px;
+  bottom: -70px;
+  background: #4f4f4f;
+  border: 1px solid #9b9b9b;
+  padding: 5px 10px;
+  width: 160px;
+  border-radius: 5px;}
+
+  .alertcustombox .clearbutton{    border: none;
+    border: none;
+    border-radius: 2px;
+    padding: 5px 14px;
+    margin: 0 2px 5px 2px;
+    background: #00bc71;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 600;
+}
+  .alertcustombox .notsurebutton{    border: none;
+    border-radius: 2px;
+    padding: 5px 14px;
+    background: #ffffff;
+    cursor: pointer;
+    margin: 0 2px 5px 2px;
+}
 
 
 *  {
@@ -67,6 +104,7 @@ body{
   max-height: 50px;
   font-size: 16px;
   font-weight: bold;
+  position: relative;
   background-color: #282D57;
 }
 
@@ -83,6 +121,7 @@ body{
 
   .chatbotheader .leftarrow:hover{background: #393f74;}
 .chatbotheader .usericon{position: relative; width: 35px; height: 35px;  border-radius: 50%;}
+.chatbotheader .usericon img{width: 100%;}
 .chatbotheader .usericon::after{position: absolute; content: ''; width: 8px; height: 8px; background: #00BC70; right: 0px; bottom: 0px; border-radius: 50%;z-index: 99;}
 .chatbotheader .usericon svg{width: 100%; height: 100%;}
 .chatbotheader .rtname {text-align: left; padding-left: 10px;     line-height: 18px;   font-family: 'Montserrat', sans-serif;}
