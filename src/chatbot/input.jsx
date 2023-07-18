@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 export default function Input({ onSend }) {
   const [text, setText] = useState("");
-  const [img, setImg] = useState(null);
+  // const [img, setImg] = useState(null);
 
   const handleInputChange = e => {
     setText(e.target.value);
