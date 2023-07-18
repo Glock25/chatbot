@@ -5,6 +5,9 @@ import ChatComponent from "./ChatComponent";
 import chatBotIcon from "./images/chatboticon.gif"
 import "./chatbot.css";
 
+import 'react-tooltip/dist/react-tooltip.css'
+import { Tooltip as ReactTooltip } from 'react-tooltip'
+
 const MainChatComponent = () => {
 
      const [chatshow, setChatshow] = useState(false);
@@ -20,11 +23,18 @@ const MainChatComponent = () => {
     <div >
 
         
-            <div className="chatIcon" onClick={()=> setChatshow(!chatshow)}>
+            <div className="chatIcon" onClick={()=> setChatshow(!chatshow)}  id="second-app-title">
                 <img src={chatBotIcon} alt="" />
             </div>
-
+                <ReactTooltip
+                    anchorId="second-app-title"
+                    place="top"
+                    
+                    style={{ backgroundColor: "rgb(51, 132, 93)", color: "#fff", fontWeight:600}}
+                    content="Hi, how can I help you!"
+              />
             
+           
 
                 <ChatComponent chatshow={chatshow}  mainparent={functionforShow}/>
                
