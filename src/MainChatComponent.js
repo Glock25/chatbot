@@ -23,12 +23,13 @@ const MainChatComponent = () => {
     <div >
 
         
-            <div className="chatIcon" onClick={()=> setChatshow(!chatshow)}  id="second-app-title">
+            <div className= {`chatIcon ${chatshow}`} onClick={()=> setChatshow(!chatshow)}  id="second-app-title">
                 <img src={chatBotIcon} alt="" />
             </div>
+
                 <ReactTooltip
                     anchorId="second-app-title"
-                    place="top"
+                    place="left"
                     
                     style={{ backgroundColor: "rgb(51, 132, 93)", color: "#fff", fontWeight:600}}
                     content="Hi, how can I help you!"

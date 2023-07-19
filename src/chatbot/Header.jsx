@@ -33,6 +33,7 @@ export default function Header(props) {
             </div>
 
             <div className="closebutton marginauto" 
+            title="Clear this Conversation !"
             onClick={()=>{setAlertpopup(!alertpopup)}}
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="13.426" height="13.423" viewBox="0 0 13.426 13.423">
